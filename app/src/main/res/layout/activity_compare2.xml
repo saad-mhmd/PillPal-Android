@@ -1,0 +1,970 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Search Bar -->
+            <LinearLayout
+                android:id="@+id/compare_search_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Spinner
+                    android:id="@+id/compare_spinner1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:popupBackground="#F5F5F5"
+                    android:spinnerMode="dialog"
+                    android:hint="Search"
+                    android:inputType="text"
+                    android:textColorHint="#808080"
+                    android:textColor="@android:color/black" />
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="#E0E0E0" />
+
+                <Spinner
+                    android:id="@+id/compare_spinner2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:popupBackground="#F5F5F5"
+                    android:spinnerMode="dialog"
+                    android:hint="Search"
+                    android:inputType="text"
+                    android:textColorHint="#808080"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <!-- Top Bar -->
+            <LinearLayout
+                android:id="@+id/compare_top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00897B"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/compare_search_view_container">
+
+                <!-- Compare Button -->
+                <Button
+                    android:id="@+id/compare_compare_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="comparebtnps"
+                    android:layout_weight="0.2"
+                    android:text="Compare"
+                    android:textColor="#FFFFFF" />
+
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/compare_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:text="Compare"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/compare_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="comparebtnps"
+                    android:text="refresh page"
+                    android:textColor="#FFFFFF" />
+
+                <!-- Clear Button -->
+
+            </LinearLayout>
+
+            <!-- Phones -->
+            <LinearLayout
+                android:id="@+id/compare_med_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/compare_top_bar">
+
+                <!-- Phone 1 -->
+                <LinearLayout
+                    android:id="@+id/compare_med1_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:orientation="vertical">
+
+                    <!-- Phone Image -->
+                    <ImageView
+                        android:id="@+id/compare_med1_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#E0F7FA"
+                        android:scaleType="centerCrop" />
+
+                    <!-- Phone Name -->
+                    <TextView
+                        android:id="@+id/compare_med1_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Med 1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Phone Specifications -->
+                    <TextView
+                        android:id="@+id/compare_med1_specifications"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:text="Specifications for Med 1" />
+
+                    <!-- Add/Remove Button -->
+                    <!--            <Button-->
+                    <!--                android:id="@+id/add_remove_button_1"-->
+                    <!--                android:layout_width="wrap_content"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                android:layout_marginTop="8dp"-->
+                    <!--                android:text="Add"-->
+                    <!--                android:textColor="#FFFFFF" />-->
+
+                    <!-- Phone 1 Details -->
+                    <LinearLayout
+                        android:id="@+id/compare_med1_details_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
+
+                        <!-- Detail Title -->
+                        <TextView
+                            android:id="@+id/compare_med1_detail_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Details for First Med"
+                            android:textColor="#00695C"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- Detail Values -->
+                        <LinearLayout
+                            android:id="@+id/compare_med1_detail_values_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <!-- Example Detail Value 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ATC :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail1_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 1"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <!-- Example Detail Value 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Agent :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail2_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 2"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Brand_Generic :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail3_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 3"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Code :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail4_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 4"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Country:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail5_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 5"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Form:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail6_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 6"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Igredients :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail7_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 7"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Manufacturer:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail8_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 8"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Name :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail9_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 9"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <!-- Field 10 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Presentation:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail10_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 10"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <!-- Field 11 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="RegistrationNumber :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail11_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 11"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <!-- Field 12 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="Route:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail12_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 12"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <!-- Field 13 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stratum :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail13_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 13"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <!-- Field 14 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="SubsidyPercentage:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med1_detail14_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 14"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Vertical Line -->
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#000000" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <!-- Phone 2 -->
+                <LinearLayout
+                    android:id="@+id/compare_med2_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:orientation="vertical">
+
+                    <!-- Phone Image -->
+                    <ImageView
+                        android:id="@+id/compare_med2_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#E0F7FA"
+                        android:scaleType="centerCrop" />
+
+                    <!-- Phone Name -->
+                    <TextView
+                        android:id="@+id/compare_med2_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Med 2"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Phone Specifications -->
+                    <TextView
+                        android:id="@+id/compare_med2_specifications"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+
+                        android:text="Specifications for Med 2" />
+
+                    <!-- Add/Remove Button -->
+                    <!--            <Button-->
+                    <!--                android:id="@+id/add_remove_button_2"-->
+                    <!--                android:layout_width="wrap_content"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                android:layout_marginTop="8dp"-->
+                    <!--                android:text="Add"-->
+                    <!--                android:textColor="#FFFFFF" />-->
+
+                    <!-- Phone 2 Details -->
+                    <LinearLayout
+                        android:id="@+id/compare_med2_details_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
+
+                        <!-- Detail Title -->
+                        <TextView
+                            android:id="@+id/compare_med2_detail_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Details for Second Med"
+                            android:textColor="#00695C"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- Detail Values -->
+                        <LinearLayout
+                            android:id="@+id/compare_med2_detail_values_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <!-- Example Detail Value 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ATC:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail1_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 1"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <!-- Example Detail Value 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Agent :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail2_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 2"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Brand_Generic:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail3_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 3"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Code :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail4_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 4"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Country:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail5_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 5"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Form:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail6_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 6"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Igredients :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail7_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 7"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Manufacturer:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail8_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 8"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Name :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail9_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 9"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Presentation :"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail10_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 10"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="RegistrationNumber:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail11_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 11"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Route:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail12_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 12"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFFD"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stratum:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail13_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 13"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#E1FFE7"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="SubsidyPercentage:"
+                                    android:textColor="#00695C"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/compare_med2_detail14_value"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Value 14"
+                                    android:textColor="#6495ED" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,477 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundpharmacy"
+    android:orientation="vertical">
+
+    <!-- Upper left and right corner icons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <!-- Settings Icon -->
+        <ImageView
+            android:id="@+id/settingsIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/settings_icon" />
+
+        <!-- Spacer View -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Search Icon -->
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:src="@drawable/whitesearchicon" />
+
+    </LinearLayout>
+
+
+    <!-- Welcome TextView -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="6dp"
+        android:text="Welcome!"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/welcomeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="(Name goes here)"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Category panel -->
+    <LinearLayout
+        android:id="@+id/categoryPanel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Category Heading -->
+        <TextView
+            android:id="@+id/categoryHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Category"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Category Boxes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Category Box 1 -->
+            <ImageView
+                android:id="@+id/category1"
+                android:layout_width="@dimen/categories_icon_size"
+                android:layout_height="@dimen/categories_icon_size"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/patient_category_icons"
+                android:padding="8dp"
+                android:src="@drawable/medicine_icon" />
+
+            <!-- Category Box 2 -->
+            <ImageView
+                android:id="@+id/category2"
+                android:layout_width="@dimen/categories_icon_size"
+                android:layout_height="@dimen/categories_icon_size"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/patient_category_icons"
+                android:padding="8dp"
+                android:src="@drawable/supplement_icon" />
+
+            <!-- Category Box 3 -->
+            <ImageView
+                android:id="@+id/category3"
+                android:layout_width="@dimen/categories_icon_size"
+                android:layout_height="@dimen/categories_icon_size"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/patient_category_icons"
+                android:padding="8dp"
+                android:src="@drawable/product_icon" />
+
+            <!-- Category Box 4 -->
+            <ImageView
+                android:id="@+id/category4"
+                android:layout_width="@dimen/categories_icon_size"
+                android:layout_height="@dimen/categories_icon_size"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/patient_category_icons"
+                android:padding="8dp"
+                android:src="@drawable/category4_icon" />
+
+        </LinearLayout>
+
+        <!-- Daily Quote Panel -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/quote_background_panel"
+                android:gravity="center"
+                android:id="@+id/daily_qoute"
+                android:padding="32dp"
+                android:text="(Daily Quote)"
+                android:textColor="#255ed6"
+                android:textStyle="italic"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Browse panel -->
+    <LinearLayout
+        android:id="@+id/browsePanel"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_green_background"
+        android:orientation="vertical">
+
+        <!-- Browse Heading -->
+        <TextView
+            android:id="@+id/browseHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Browse"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Horizontal ScrollView for Boxes -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!-- Box 1 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box1"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box1_icon" />
+
+                    <TextView
+                        android:id="@+id/box1Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 1 Name" />
+
+                    <TextView
+                        android:id="@+id/box1Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 1 Price" />
+
+                </LinearLayout>
+
+                <!-- Box 2 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box2"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box2_icon" />
+
+                    <TextView
+                        android:id="@+id/box2Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 2 Name" />
+
+                    <TextView
+                        android:id="@+id/box2Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 2 Price" />
+                </LinearLayout>
+
+                <!-- Box 3 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box3"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box3_icon" />
+
+                    <TextView
+                        android:id="@+id/box3Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 3 Name" />
+
+                    <TextView
+                        android:id="@+id/box3Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 3 Price" />
+                </LinearLayout>
+
+                <!-- Box 4 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box4"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box4_icon" />
+
+                    <TextView
+                        android:id="@+id/box4Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 4 Name" />
+
+                    <TextView
+                        android:id="@+id/box4Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 4 Price" />
+                </LinearLayout>
+
+                <!-- Box 5 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box5"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box5_icon" />
+
+                    <TextView
+                        android:id="@+id/box5Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 5 Name" />
+
+                    <TextView
+                        android:id="@+id/box5Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 5 Price" />
+                </LinearLayout>
+
+                <!-- Box 6 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box6"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box6_icon" />
+
+                    <TextView
+                        android:id="@+id/box6Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 6 Name" />
+
+                    <TextView
+                        android:id="@+id/box6Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 6 Price" />
+                </LinearLayout>
+
+                <!-- Box 7 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box7"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box7_icon" />
+
+                    <TextView
+                        android:id="@+id/box7Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 7 Name" />
+
+                    <TextView
+                        android:id="@+id/box7Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 7 Price" />
+                </LinearLayout>
+
+                <!-- Box 8 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/patient_browse_icons"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/box8"
+                        android:layout_width="@dimen/browse_icon_size"
+                        android:layout_height="@dimen/browse_icon_size"
+                        android:src="@drawable/box8_icon" />
+
+                    <TextView
+                        android:id="@+id/box8Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 8 Name" />
+
+                    <TextView
+                        android:id="@+id/box8Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Box 8 Price" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- Floating bar at the bottom -->
+        <LinearLayout
+            android:id="@+id/floatingBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/patient_floating_bar"
+            android:orientation="horizontal">
+
+            <!-- Home Icon -->
+            <ImageView
+                android:id="@+id/homeIcon"
+                android:layout_width="@dimen/bar_icon_size"
+                android:layout_height="@dimen/bar_icon_size"
+                android:layout_marginVertical="2dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_icon_white" />
+
+            <!-- Compare Icon -->
+            <ImageView
+                android:id="@+id/compareIcon"
+                android:layout_width="@dimen/bar_icon_size"
+                android:layout_height="@dimen/bar_icon_size"
+                android:layout_marginVertical="2dp"
+                android:layout_weight="1"
+                android:src="@drawable/compare_icon_white" />
+
+            <!-- Track Icon -->
+            <ImageView
+                android:id="@+id/trackIcon"
+                android:layout_width="@dimen/bar_icon_size"
+                android:layout_height="@dimen/bar_icon_size"
+                android:layout_marginVertical="2dp"
+                android:layout_weight="1"
+                android:src="@drawable/track_icon_white" />
+
+            <!-- Reminder Icon -->
+            <ImageView
+                android:id="@+id/reminderIcon"
+                android:layout_width="@dimen/bar_icon_size"
+                android:layout_height="@dimen/bar_icon_size"
+                android:layout_marginVertical="2dp"
+                android:layout_weight="1"
+                android:src="@drawable/reminder_icon_white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

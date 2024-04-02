@@ -1,0 +1,54 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/find_med_pharmacy_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Pharmacy Name"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/find_med_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Price"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/find_med_location_place"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            android:layout_weight="2"
+            android:layout_marginStart="8dp"
+            android:text="Place" />
+
+        <TextView
+            android:id="@+id/find_med_location_phone"
+            android:layout_width="10dp"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:layout_marginStart="8dp"
+            android:text="Phone" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/calllogo"
+            android:id="@+id/callnumber" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

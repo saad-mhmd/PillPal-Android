@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:src="@drawable/pharmacist_options_panels"
+            android:gravity="center"
+            android:scaleType="centerCrop" />
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#ebf0fb" />
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+</layer-list>

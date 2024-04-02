@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PatientClasses.Patient">
+    <Button
+        android:id="@+id/gotocompare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cpmpare"
+        android:onClick="goToCompare"/>
+
+    <Button
+        android:id="@+id/admin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin" />
+
+    <Button
+        android:id="@+id/pharmacist_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pharmacist" />
+
+    <Button
+        android:id="@+id/customer_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer" />
+
+</LinearLayout>
